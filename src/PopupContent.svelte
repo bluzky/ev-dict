@@ -53,7 +53,7 @@
     <div class="content">
       {#if data.definition}
       <div class="phonetic">{data.phonetic}</div>
-      <div class="type">{data.type}</div>
+      <div class="type">{data.type || ""}</div>
       <div class="definition">
           {#each data.definition as section}
               <PopupSection {section} />
@@ -80,7 +80,7 @@
         title="Word has been saved">Saved</span
       ><a
         class="link-more"
-        href="https://pawtools.org/dictionary?keyword=options"
+        href={"https://pawtools.org/dictionary?keyword=" + term}
         target="_blank"
         rel="noreferrer"
         title="Full definition">More</a
